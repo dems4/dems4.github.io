@@ -10,43 +10,57 @@
 		<img class="img-banner" src="images/monk.jpg" alt="banner">
 		<nav class="main-menu">
 			<ul>
-				<li><a href="home.html">About</a></li>
+				<li><a href="index.html">Home</a></li>
 				<li><a href="history.html">History</a></li>
 				<li><a href="artists.html">Artists</a></li>
 				<li><a href="recordings.html">Recordings</a></li>
-				<li><a href="watch-&-listen.html">Watch & <br> Listen</a></li>
+				<li><a href="watch.html">Watch</a></li>
 				<li><a href="connect.html">Connect</a></li>
 			</ul>
 		</nav>
-		<h1>Connect</h1>
 	</header>
-<!-- 	<div class="form-area">
-		<form class="form" action="form-submited" method="post">
-			<div class="input">
-				<label for="first-name">First-name</label>
-				<input type="text" name="first-name" id="first-name">
+	<div class="container">
+		<div class="row">
+			<div class="column">
+				<div class="contact-area">
+					<div class="contact-header">
+						<h1>Connect</h1>
+						<p>Join our mailing list to receive weekly newsletters with updates, announcements and listening recomendation!</p>
+					</div>
+					<div class="contact-content">
+						<div class="row">
+							<div class="column">
+								<div class="contact-bottom">
+									<form class="contact-form" action="form-submited.html" target="_self" method="post" action="form-submited.html">
+										<div class="form-group">                
+											<input type="text" class="form-control" placeholder="First name" id="first-name" name="first-name" required>
+										</div>
+										<div class="form-group">                
+											<input type="text" class="form-control" placeholder="Last name" id="last-name" name="last-name" required>
+										</div>
+										<div class="form-group">                
+											<input type="email" class="form-control" placeholder="Enter Email" id="email" name="email" required>
+										</div>              
+										<div class="form-group">
+											<textarea class="form-control" placeholder="Message" id="message" name="message"></textarea>
+										</div>
+										<div>
+											<button class="send-msg-btn" type="submit" value="Submit"><span>SUBMIT</span></button>
+										</div>
+									</form>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="input">
-				<label for="last-name">Last-name</label>
-				<input type="text" name="last-name" id="last-name">	
-			</div>
-			<div class="input">
-				<label for="email">Email</label>
-				<input type="email" name="email" id="email">
-			</div>
-			<div class="input">
-				<textarea cols="30" rows="6">Send a message!</textarea>
-			</div>
-			<div>
-				<input type="submit" value="Submit">
-			</div>
-		</form>
-	</div> -->
+		</div>
+	</div>
+	<!-- <div class="container">
 	<div class="message">
 		<p>Join our mailing list to receive weekly newsletters with updates and announcements!</p>
 	</div>
 	<div>
-<!-- 		<img class="img-banner" src="images/bird-and-dizz.jpg" alt="banner"> -->
 		<form class="connect-content">
 			<div class="form-image">
 				<img src="images/bird-and-diz.jpg" alt="bird-and-diz">
@@ -81,5 +95,11 @@
 			</div>
 		</form>
 	</div>
+	</div> -->
+	<footer class="footer">
+		<h3>Join the community!</h3>
+		<p>If you'd like to get newsletters with updates and listening suggestions.</p>
+		<a href="connect.html">Connect</a>
+	</footer>
 </body>
 </html>

@@ -1,12 +1,47 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
 }
 
 h1 {
-	color: #613C3B;
+	color: black;
 	font-size: 3em;
 	text-align: center;
+	margin: 1em 0 1em;
+}
+
+.container {
+	min-height: 100%;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+.content-area {
+/*	overflow: auto;*/
+	/*padding-bottom: 100px;*/
+}
+
+.footer {
+	background-color: #AD2518;
+	position: relative;
+	height: 100px;
+	padding-top: 1.5em;
+/*	margin-top: 100px;*/
+	clear: both;
+	color: #F2E0C9;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.footer a {
+	text-decoration: none;
 }
 
 .img-banner {
@@ -18,18 +53,13 @@ h1 {
 	.img-banner {
 		display: block;
 		width: 100%;
-		max-height: 450px;
-		object-fit: cover;
+		max-height: 400px;
+		object-fit: fill;
 	}
 
 }
 
 /* --------------------------------------------- Menu ----------------------------------------------*/
-
-.main-menu {
-	color: black;
-	background-color: #BF6E50;
-}
 
 .main-menu ul {
 	background-color: #AD2518;
@@ -75,7 +105,7 @@ h1 {
 	}
 
 	.main-menu li a {
-		padding: .6em 1em;
+		padding: .8em 1em;
 	}
 
 }
@@ -86,31 +116,29 @@ h1 {
 	background-color: #BF6E50;
 }
 
-.message-box {
-	margin-bottom: 1em;
-}
-
-.message {
-	align-self: center;
-	padding: 2em 1em 2em;
+.message-box, .quote-card {
+	margin: 1em .5em 1em;
 }
 
 .home-img img {
 	display: block;
 	width: 100%;
+	height: 100%;
+	margin-bottom: 1em;
 }
 
-.message, .quote-card {
+.message-content, .quote-card {
 	background-color: #D97C2B;
 	border: medium solid #881218;
 	color: #F2E0C9;
-/*	padding: 1.5em 3em 1.5em;
-	margin: 0 0.5em 1em;*/
-/*	padding: 1em 0 1em;*/
-	margin-bottom: 1em;
+	padding: 1.5em 1em 1.5em;
 	font-size: 1.2em;
 	font-weight: bold;
 	text-align: center;
+}
+
+.message-content:nth-child(1) {
+	margin-bottom: 1em;
 }
 
 .quoter {
@@ -125,37 +153,47 @@ h1 {
 	.message-box {
 		display: flex;
 		justify-content: space-around;
+		align-items: flex-start;
+		max-width: 1105px;
 		margin: 2em 1em 2em;
 	}
 
 	.message {
-		flex-basis: 58%;
-		height: 100%;
+		flex-basis: 60%;
+/*		height: 100%;
+		margin-bottom: 0;*/
+		display: flex;
+		flex-flow: column;
+		justify-content: space-between;
 		order: 1;
 	}
 
 	.home-img {
 		order: 2;
 		flex-basis: 38%;
+		margin-bottom: 0;
 	}
-
 	.home-img img {
-/*		width: 100%;*/
-		height: 82%;
-		object-fit: cover;
+		height: 100%;
 		margin: 0;
-	}
+}	
 
 	.quotes {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		max-width: 1105px;
 	}
 	.quote-card {
-		flex-basis: 46%;
+		flex-basis: 47%;
 		justify-content: center;
 		padding: .5em 0 .5em;
-		margin: 0 .5em 1.5em;
+		margin: 0 .5em 1em;
+	}
+
+	.quote-card:nth-child(2) {
+		margin-left: -.5em;
+
 	}
 
 	.quote-card:nth-child(3) {
@@ -164,31 +202,10 @@ h1 {
 	}
 }
 
-/*@media only screen and (min-width: 1000px) {
-
-	.img-banner {
-		
-	}
-
-	.message {
-		align-content: center;
-		flex-basis: 70%;
-	}
-
-	.home-img {
-		flex-basis: 30%;
-	}
-
-	.home-img img {
-
-	}
-
-	.quotes {
-
-	}
+@media only screen and (min-width: 1000px) {
 
 	.quote-card {
-
+		flex-basis: 48%;
 	}
 
 	.quote-card:nth-child(3) {
@@ -196,35 +213,56 @@ h1 {
 	}
 
 
-}*/
+}
 
 
 /* --------------------------------------------- History ----------------------------------------------*/
 
 .history {
-	background-color: #D97C2B;
+	background-color: #BF6E50;
 }
 
 .history-content {
-	background-color: #BF6E50;
+	background-color: #D97C2B;
 	color: #F2E0C9;
-	padding: 1em 1.5em 1em;
+	line-height: 1em;
+	padding: 1em .5em 1em;
 	margin: 1em;
+	font-size: 1.2em;
 	font-weight: bold;
 }
 
-/*@media screen and (min-width: 810px) {
+.history-content p {
+	margin-bottom: 1em;
+}
 
-	.history{
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
+.image-side {
+	border: solid black 1px;
+	margin-bottom: .5em;
+}
+
+.image-side img {
+	display: block;
+	width: 100%;
+}
+
+@media only screen and (min-width: 414px) {
+
+	.image-side {
+		float: right;
+		margin: 0 .5em .5em;
+		width: 300px;
 	}
 
-	.history-content {
-		flex-basis: 60%;
+}
+
+@media only screen and (min-width: 768px) {
+
+	.image-side {
+		width: 400px;
 	}
-}*/
+
+}
 
 
 /* --------------------------------------------- Artists ----------------------------------------------*/
@@ -235,7 +273,6 @@ h1 {
 
 .artist-card {
 	background-color: #D97C2B;
-	color: #F2E0C9;	
 	margin-bottom: 2em;
 }
 
@@ -247,19 +284,18 @@ h1 {
 }
 
 .artist-content {
+	color: #F2E0C9;	
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 1em;
 	padding: 1em .5em 1em;
 }
 
 .artist-content h2 {
-	font-size: 1.5em;
+	padding-bottom: 1em;
 	font-weight: 300;
 	margin: 0;
 	text-transform: capitalize;
-}
-
-.artist-content p {
-
-	font-weight: bold;
 }
 
 @media only screen and (min-width: 667px) {
@@ -304,44 +340,41 @@ h1 {
 
 	}
 
-	.artist-content h2 {
-		font-size: 3em;
-	}
-
-	.artist-content p {
-		font-size: 1.5em;
-	}
-
 	.artist-img {
 		flex-basis: 20%;
 		flex-grow: 1;
 	}
 
+	.artist-img img {
+		max-height: 250px;
+		object-position: top;
+	}
 }
 
 	/* --------------------------------------------- Recordings ----------------------------------------------*/
 
 .recordings {
-	background-color: #D97C2B;
+	background-color: #BF6E50;
 }
 
 .recording {
-	background-color: #BF6E50;
+	background-color:  #D97C2B;
 	color: #F2E0C9;
 	text-align: center;
-	margin-bottom: 1em;
+	margin: 0 .5em 1em;
 }
 
-.recording h2 {
-	background-color: #881218;
-	font-size: 2em;
-	font-weight: 300;
+.recording-title {
+	background-color: #AD2518;
+/*	font-size: 2em;*/
+/*	font-weight: 300;*/
 	text-transform: capitalize;
 	margin: 0;
 }
 
 .recording-content {
-	font-weight: bold;
+	font-size: 1.2em;
+	/*font-weight: bold;*/
 	padding-bottom: .5em;
 }
 
@@ -354,8 +387,12 @@ h1 {
 	}
 
 	.recording {
-		flex-basis: 49%;
-		margin-bottom: 1em;
+		flex-basis: 48%;
+		margin: 0 0 1em;
+	}
+
+	.recording-content {
+		padding: .5em .5em .5em;
 	}
 }
 
@@ -374,116 +411,233 @@ h1 {
 /* --------------------------------------------- Watch and Listen ----------------------------------------------*/
 
 .watch-and-listen {
-	background-color: #BF6E50;
-}
-
-.video-section {
-/*	margin: 0;
-	display: flex;
-	flex-flow: column;
-	align-items: center;*/
-}
-
-.video-content {
-	background-color: #D97C2B;
-	padding: .2em 1em 1em;
-	margin: 0 0 1em;
-
-}
-
-.video iframe {
+	position: relative;
 	width: 100%;
+	height: 100%;
+	background-color: #BF6E50;
+	overflow-x: hidden;
+	clear: both;
+}
+
+.watch-and-listen .container {
+	position: relative;
+}
+
+.videos-container {
+	max-width: 1060px;
+	margin: 0 auto;
+	margin-bottom: 1em;
+}
+
+#videos {
+	background-color: #D97C2B;
+	border: medium solid #881218;
+	padding: 3em 1em;
+	margin: 3em .5em 3em;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.videos-heading {
+	text-align: center;
+	margin-bottom: 5em;
+}
+
+.videos-heading p {
+	display: block;
+	font-size: 1.2em;
+	margin-top: -1em;
+}
+
+.row:before, .row:after {
+	content: " ";
+	display: table;
+}
+.row:after {
+	clear: both;
+}
+
+.video {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.video-entry {
+    margin-bottom: 40px;
+}
+
+.video-entry p {
+	margin-bottom: 1em
+}
+
+.play {
+	position: relative;
+	display: table;
+	overflow: hidden;
+	z-index: 1;
+	height: 270px;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+	margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 510px) {
+
+	.play {
+		height: 400px;
+	}
+
+	#videos {
+		margin-left: 1.5em;
+		margin-right: 1.5em;
+		padding: 3em 2em;
+	}
+
+}
+
+@media only screen and (min-width: 667px) {
+
+	.play {
+		height: 270px;
+	}
+
+	.video {
+		float: left;
+		width: 49%;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+
+	#videos {
+		margin: 5em 3em 5em;
+		padding: 3em 2em;
+	}
+
+	.play {
+		height: 270px;
+	}
+
+	.video {
+		width: 33%;
+	}
 }
 
 /* --------------------------------------------- Connect ----------------------------------------------*/
 
 .connect {
-	background-color: #D97C2B;
-	font-weight: bold;
-	color: #613C3B
+	background-color: #BF6E50;
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 100%;
 }
 
-.connect-content {
-	display: flex;
-	flex-wrap: wrap;
+.connect .container {
+	padding-right: 1em;
+	padding-left: 1em;
+	margin-right: auto;
+	margin-left: auto;
 }
 
-.message {
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.column {
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.contact-area {
+	background-color: #D97C2B; 
+	border: medium solid #881218;
+	float: left;
+	padding: 100px 0;
+	margin-top: 3em;
 	margin-bottom: 3em;
+	width: 100%;
 }
 
-.form-area {
-	align-self: center;
-	order: 1;
+.contact-header {
+	float: left;
+	text-align: center;
+	width: 100%;
+	padding: 0 .5em 0;
+	font-size: 1.2em;
+}
+
+.contact-content{
+	float: left;
+	margin-top: 50px;
+	width: 100%;
+}
+
+.contact-bottom {
+	float: left;
+	width: 100%;
+}
+
+.contact-form {
+	text-align: center;
 }
 
 .form-group {
-	margin-bottom: 1em;
+	margin: 1em 2em 1em;
 }
 
-.form input, textarea {
+.contact-form .form-group input {
 	background-color: #F2E0C9;
+	border-radius: 4px;
+	color: #333;
+	font-size: 15px;
+	border: 1px solid #888;
+	height: 45px;
+	margin-bottom: 24px;
 }
 
-.form-image {
+.contact-form .form-group textarea {
+	background-color: #F2E0C9;
+	border: 1px solid #888;
+	border-radius: 4px;
+	color: #333;
+	font-size: 18px;
+	padding: 10px;
+	height: 190px;
+}
+
+.form-control {
 	display: block;
-	flex-grow: 1;
-	margin: 0 1.5em 3em;
-}
-
-.form-image img {
 	width: 100%;
-	height: auto;
-	margin: 0;
-/*	object-fit: contain;*/
-
+	padding: 6px 12px;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
 }
 
-@media only screen and (min-width: 660px) {
-
-	.connect-content {
-		margin: 2em 1.5em 2em;
-
-	}
-
-	.message {
-
-	}
-
-	.form-area {
-		flex-basis: 47%;
-		order: 1;
-	}
-
-	.form-group {
-
-	}
-
-
-	.form-image {
-		flex-basis: 47%;
-		order: 2;
-		margin: 0;
-	}
-
+.contact-form button {
+    width: 60%;
 }
 
-@media only screen and (min-width: 1000px) {
-
-	.connect-content {
-		margin: 2em 3em 4em;
-
-	}
-
-	.message {
-		
-	}
-
-	.form {
-		
-	}
-
-	.form-image img {
-
-	}
+.send-msg-btn {
+    border-radius: 4px;
+    border: 1px solid #881218;
+	background-color: #F2E0C9;
+	color: black;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 14px 24px;
+    margin: 1em 0 1em;
 }
+
+
+
